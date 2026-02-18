@@ -1,0 +1,120 @@
+{
+  "info": {
+    "name": "Kovon Backend Assignment",
+    "_postman_id": "00000000-0000-0000-0000-000000000000",
+    "description": "Postman collection for Kovon Candidate Application & Shortlisting API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Candidate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rahul\",\n  \"skill\": \"Nurse\",\n  \"experience\": 3,\n  \"languageScore\": 70,\n  \"documentsVerified\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/candidates",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "candidates"]
+        }
+      }
+    },
+    {
+      "name": "Create Job",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Registered Nurse\",\n  \"country\": \"Germany\",\n  \"minExperience\": 2,\n  \"minLanguageScore\": 60\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/jobs",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "jobs"]
+        }
+      }
+    },
+    {
+      "name": "Apply for Job",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"candidateId\": \"<candidateId>\",\n  \"jobId\": \"<jobId>\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/applications",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "applications"]
+        }
+      }
+    },
+    {
+      "name": "List Applications by Job",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/applications?jobId=<jobId>",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "applications"],
+          "query": [
+            {
+              "key": "jobId",
+              "value": "<jobId>"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Shortlist Application",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/applications/<applicationId>/shortlist",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [
+            "api",
+            "applications",
+            "<applicationId>",
+            "shortlist"
+          ]
+        }
+      }
+    }
+  ]
+}
+
+
