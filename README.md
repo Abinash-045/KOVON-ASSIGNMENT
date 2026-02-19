@@ -1,4 +1,4 @@
-# Kovon Backend Assignment.
+# Kovon Backend Assignment
 
 A RESTful API for managing candidate applications and job postings with automatic eligibility scoring and shortlisting. Built with TypeScript, Express.js, and MongoDB.
 
